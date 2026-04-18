@@ -237,15 +237,39 @@ h1 {
   </nav>  <header class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">India-first career guidance platform • curated, visual, practical</div>
-        <h1>Find the right college, exam, cutoff, and career path with clarity.</h1>
-        <p class="lead">
-          A premium student guidance website focused mainly on India, with selected global institutions, concise college profiles, entrance routes, cutoff style guidance, campus snapshots, exam difficulty, skills gained, student opinions, and AI-assisted doubt solving.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#colleges">Explore Colleges</a>
-          <a class="button secondary" href="#assistant">Ask the AI Guide</a>
-        </div>
+        <div style="text-align:center;">
+  <h1 style="margin-bottom:12px;">CareerTrekker</h1>
+  <p class="lead" style="margin:0 auto 24px; max-width:700px;">
+    Search colleges, exams, cutoffs and career paths in a simple way.
+  </p>
+
+  <div class="search-wrap glass" style="max-width:900px; margin:0 auto;">
+    <input id="searchInput" placeholder="Search IIT, AIIMS, NEET, JEE, law, MBA..." />
+    <select id="countryFilter">
+      <option value="all">All countries</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+    </select>
+    <select id="streamFilter">
+      <option value="all">All streams</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Medicine">Medicine</option>
+      <option value="Law">Law</option>
+      <option value="Management">Management</option>
+    </select>
+    <select id="sortFilter">
+      <option value="priority">Default priority</option>
+      <option value="difficultyHigh">Highest difficulty first</option>
+      <option value="reviewHigh">Best reviewed first</option>
+    </select>
+  </div>
+
+  <div class="hero-actions" style="justify-content:center;">
+    <a class="button primary" href="#colleges">Search Now</a>
+    <a class="button secondary" href="#assistant">Ask AI Guide</a>
+  </div>
+</div>
       </div>
       <div class="hero-panel glass">
         <div class="hero-panel-grid">
