@@ -1,227 +1,447 @@
-<!DOCTYPE html><html lang="en">
+
+          <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta name="google-site-verification" content="pCSlV36gvwlj3cqE8ZgFl5-lQyAosLDcUmWj9eWw8Ss" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareerCompass India</title>
-  <meta name="description" content="Curated college, university, entrance exam, cutoff and career guidance platform focused on India." />
+  <title>CareerTrekker</title>
+  <meta name="description" content="Search colleges, entrance exams, cutoffs and career paths in India with a clean, simple interface." />
+
   <style>
     :root {
       --bg: #07111f;
       --card: rgba(255,255,255,0.08);
-      --card-strong: rgba(255,255,255,0.12);
       --text: #edf3ff;
       --muted: #afbdd6;
       --brand: #7c9cff;
       --brand-2: #59e1c5;
       --line: rgba(255,255,255,0.12);
       --shadow: 0 20px 50px rgba(0,0,0,0.28);
-      --radius: 24px;
-    }* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(124,156,255,0.24), transparent 30%),
-    radial-gradient(circle at top right, rgba(89,225,197,0.12), transparent 25%),
-    linear-gradient(180deg, #091422 0%, #07111f 100%);
-  color: var(--text);
-}
+    }
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-.container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-.glass {
-  background: var(--card);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-.nav {
-  position: sticky; top: 0; z-index: 50;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: rgba(7,17,31,0.72);
-  backdrop-filter: blur(16px);
-}
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,156,255,0.24), transparent 30%),
+        radial-gradient(circle at top right, rgba(89,225,197,0.12), transparent 25%),
+        linear-gradient(180deg, #091422 0%, #07111f 100%);
+      color: var(--text);
+    }
 
-.nav-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 14px 0;
-}
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-.brand {
-  display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px;
-}
-.brand-badge {
-  width: 40px; height: 40px; border-radius: 14px;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  display: grid; place-items: center; color: #08111d; font-weight: 900;
-  box-shadow: 0 10px 30px rgba(124,156,255,0.35);
-}
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
-.nav-links a { color: var(--muted); font-size: 14px; }
-.nav-links a:hover { color: var(--text); }
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
 
-.hero {
-  padding: 72px 0 40px;
-}
-.hero-grid {
-  display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; align-items: center;
-}
-.eyebrow {
-  display: inline-flex; gap: 8px; align-items: center;
-  padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1); color: var(--muted); font-size: 13px;
-}
-h1 {
-  font-size: clamp(40px, 7vw, 72px); line-height: .98; margin: 18px 0 16px;
-  letter-spacing: -2.2px;
-}
-.lead {
-  color: var(--muted); font-size: 18px; line-height: 1.8; max-width: 820px;
-}
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
-.button {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 48px; padding: 0 18px; border-radius: 16px; font-weight: 700;
-  border: 1px solid transparent; transition: .2s ease;
-  cursor: pointer;
-}
-.button.primary {
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #08111d;
-  box-shadow: 0 16px 38px rgba(124,156,255,0.28);
-}
-.button.secondary {
-  background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); color: var(--text);
-}
-.button:hover { transform: translateY(-1px); }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(7,17,31,0.72);
+      backdrop-filter: blur(16px);
+    }
 
-.hero-panel {
-  border-radius: 28px; padding: 22px;
-}
-.hero-panel-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
-}
-.mini-card {
-  border-radius: 22px; padding: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-}
-.mini-card h4 { margin: 0 0 6px; font-size: 15px; color: var(--muted); font-weight: 600; }
-.mini-card strong { font-size: 26px; }
-.mini-card p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
 
-.section { padding: 28px 0 64px; }
-.section-head {
-  display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-bottom: 22px; flex-wrap: wrap;
-}
-.section-head h2 { margin: 0; font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
-.section-head p { margin: 0; color: var(--muted); max-width: 760px; line-height: 1.75; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
 
-.search-wrap {
-  display: grid; grid-template-columns: 1.2fr repeat(3, .65fr); gap: 12px;
-  padding: 14px; border-radius: 26px;
-}
-.search-wrap input, .search-wrap select {
-  width: 100%; background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.08);
-  min-height: 50px; border-radius: 16px; padding: 0 14px; outline: none;
-}
-.search-wrap input::placeholder { color: #9ab0d4; }
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: #08111d;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(124,156,255,0.35);
+    }
 
-.cards {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px;
-}
-.card {
-  overflow: hidden; border-radius: 26px; display: flex; flex-direction: column;
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--shadow);
-}
-.card-image {
-  position: relative; height: 210px; overflow: hidden;
-  background: linear-gradient(135deg, rgba(124,156,255,.25), rgba(89,225,197,.15));
-}
-.card-image img { width: 100%; height: 100%; object-fit: cover; }
-.tag-row {
-  position: absolute; left: 14px; right: 14px; top: 14px;
-  display: flex; gap: 8px; flex-wrap: wrap;
-}
-.tag {
-  padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
-  background: rgba(7,17,31,.78); border: 1px solid rgba(255,255,255,.1);
-}
-.card-body { padding: 18px 18px 20px; }
-.card-body h3 { margin: 0 0 8px; font-size: 22px; letter-spacing: -.5px; }
-.meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
-.desc { color: #d3def3; line-height: 1.72; font-size: 14px; }
-.metrics {
-  display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 18px 0 16px;
-}
-.metric {
-  padding: 12px; border-radius: 16px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.06);
-}
-.metric small { display: block; color: var(--muted); margin-bottom: 6px; }
-.metric strong { font-size: 15px; }
-.card-footer { display: flex; gap: 10px; flex-wrap: wrap; }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-.grid-2 {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
-}
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-.panel {
-  padding: 22px; border-radius: 26px;
-}
+    .nav-links a:hover { color: var(--text); }
 
-.exam-item, .review-item {
-  padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.exam-item:last-child, .review-item:last-child { border-bottom: 0; }
-.exam-item h3, .review-item h3 { margin: 0 0 6px; font-size: 18px; }
-.muted { color: var(--muted); line-height: 1.7; }
+    .hero {
+      padding: 72px 0 36px;
+    }
 
-.assistant-box {
-  display: grid; grid-template-columns: 1fr auto; gap: 12px; margin-top: 14px;
-}
-.assistant-box input {
-  min-height: 52px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08);
-  background: rgba(255,255,255,.06); color: var(--text); padding: 0 14px; outline: none;
-}
-.assistant-answer {
-  margin-top: 14px; border-radius: 18px; padding: 16px; background: rgba(255,255,255,.05); color: #dbe6fa; line-height: 1.75;
-  border: 1px solid rgba(255,255,255,.06);
-  min-height: 96px;
-}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+    }
 
-.footer {
-  padding: 40px 0 80px; color: var(--muted);
-}
-.footer-card {
-  padding: 22px; border-radius: 26px;
-  display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
-}
-.tiny { font-size: 13px; color: #98afd0; line-height: 1.75; }
+    h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: .98;
+      margin: 18px 0 16px;
+      letter-spacing: -2.2px;
+    }
 
-@media (max-width: 1050px) {
-  .hero-grid, .grid-2, .cards, .search-wrap { grid-template-columns: 1fr; }
-  .hero { padding-top: 56px; }
-}
-@media (max-width: 640px) {
-  .nav-links { display: none; }
-  .hero-panel-grid { grid-template-columns: 1fr; }
-  .footer-card { grid-template-columns: 1fr; }
-  .container { width: min(100% - 20px, 1180px); }
-  h1 { letter-spacing: -1.4px; }
-}
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 820px;
+    }
 
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #08111d;
+      box-shadow: 0 16px 38px rgba(124,156,255,0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.1);
+      color: var(--text);
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .hero-panel {
+      border-radius: 28px;
+      padding: 22px;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-card h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .mini-card strong { font-size: 24px; }
+
+    .mini-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .section { padding: 28px 0 64px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.75;
+    }
+
+    .search-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, .65fr);
+      gap: 12px;
+      padding: 14px;
+      border-radius: 26px;
+      margin-top: 16px;
+    }
+
+    .search-wrap input,
+    .search-wrap select {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 50px;
+      border-radius: 16px;
+      padding: 0 14px;
+      outline: none;
+    }
+
+    .search-wrap input::placeholder { color: #9ab0d4; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 26px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .card-image {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(124,156,255,.25), rgba(89,225,197,.15));
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tag-row {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(7,17,31,.78);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .card-body { padding: 18px 18px 20px; }
+
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -.5px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      color: #d3def3;
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+      margin: 18px 0 16px;
+    }
+
+    .metric {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .metric small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric strong { font-size: 15px; }
+
+    .card-footer {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: 26px;
+    }
+
+    .exam-item,
+    .review-item {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .exam-item:last-child,
+    .review-item:last-child {
+      border-bottom: 0;
+    }
+
+    .exam-item h3,
+    .review-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .assistant-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .assistant-box input {
+      min-height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 0 14px;
+      outline: none;
+    }
+
+    .assistant-answer {
+      margin-top: 14px;
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,.05);
+      color: #dbe6fa;
+      line-height: 1.75;
+      border: 1px solid rgba(255,255,255,.06);
+      min-height: 96px;
+    }
+
+    .footer {
+      padding: 40px 0 80px;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      padding: 22px;
+      border-radius: 26px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .tiny {
+      font-size: 13px;
+      color: #98afd0;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .grid-2,
+      .cards,
+      .search-wrap {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 56px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero-panel-grid { grid-template-columns: 1fr; }
+      .footer-card { grid-template-columns: 1fr; }
+      .container { width: min(100% - 20px, 1180px); }
+      h1 { letter-spacing: -1.4px; }
+    }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
-        <div class="brand-badge">CC</div>
+        <div class="brand-badge">CT</div>
         <div>
           <div id="siteName">CareerTrekker</div>
           <div style="font-size:12px;color:var(--muted);font-weight:600;">Colleges, exams, cutoffs, careers</div>
@@ -231,224 +451,648 @@ h1 {
         <a href="#colleges">Top Colleges</a>
         <a href="#exams">Entrance Exams</a>
         <a href="#assistant">AI Guide</a>
-        <a href="#reviews">Student Reviews</a>
+        <a href="#reviews">Student Insights</a>
       </div>
     </div>
-  </nav>  <header class="hero">
+  </nav>
+
+  <header class="hero">
     <div class="container hero-grid">
-      <div>
-        <div style="text-align:center;">
-  <h1 style="margin-bottom:12px;">CareerTrekker</h1>
-  <p class="lead" style="margin:0 auto 24px; max-width:700px;">
-    Search colleges, exams, cutoffs and career paths in a simple way.
-  </p>
+      <div style="text-align:center;">
+        <h1 style="margin-bottom:12px;">CareerTrekker</h1>
+        <p class="lead" style="margin:0 auto 24px; max-width:700px;">
+          Search colleges, exams, cutoffs and career paths in a simple way.
+        </p>
 
-  
+        <div class="search-wrap glass" style="max-width:980px; margin:0 auto;">
+          <input id="searchInput" placeholder="Search IIT, AIIMS, JEE, NEET, Law, MBA..." />
+          <select id="countryFilter">
+            <option value="all">All countries</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+          </select>
+          <select id="streamFilter">
+            <option value="all">All streams</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Law">Law</option>
+            <option value="Management">Management</option>
+          </select>
+          <select id="sortFilter">
+            <option value="priority">Default priority</option>
+            <option value="difficultyHigh">Highest difficulty first</option>
+            <option value="reviewHigh">Best reviewed first</option>
+          </select>
+        </div>
 
-  <div class="hero-actions" style="justify-content:center;">
-    <a class="button primary" href="#colleges">Search Now</a>
-    <a class="button secondary" href="#assistant">Ask AI Guide</a>
-  </div>
-</div>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="button primary" href="#colleges">Explore Colleges</a>
+          <a class="button secondary" href="#assistant">Ask AI Guide</a>
+        </div>
       </div>
+
       <div class="hero-panel glass">
         <div class="hero-panel-grid">
           <div class="mini-card">
             <h4>India-focused</h4>
-            <strong>Top NIRF + more</strong>
-            <p>Engineering, medical, management, law, arts, research and more.</p>
+            <strong>Large shortlist</strong>
+            <p>Top IITs, AIIMS, law schools, management institutes and other known colleges.</p>
           </div>
           <div class="mini-card">
-            <h4>Useful, not bloated</h4>
-            <strong>Short profiles</strong>
-            <p>Eligibility, exams, cutoffs, fees, campus life, skills, reviews.</p>
+            <h4>Clean search</h4>
+            <strong>Fast filtering</strong>
+            <p>Search by college name, stream, country and sort by difficulty or rating.</p>
           </div>
           <div class="mini-card">
-            <h4>Easy to scale</h4>
-            <strong>Static + fast</strong>
-            <p>Can run free on GitHub Pages or Cloudflare Pages with almost no maintenance.</p>
+            <h4>Useful data</h4>
+            <strong>Exam + route</strong>
+            <p>Each card shows eligibility, route, difficulty, cutoffs and skills in one place.</p>
           </div>
           <div class="mini-card">
-            <h4>AI support</h4>
-            <strong>Guide layer</strong>
-            <p>Starter local assistant included now; real AI API can be plugged in later.</p>
+            <h4>Easy to grow</h4>
+            <strong>Static + free</strong>
+            <p>You can keep expanding this site on GitHub Pages without paying for hosting.</p>
           </div>
         </div>
       </div>
     </div>
-  </header>  <section class="section" id="colleges">
+  </header>
+
+  <section class="section" id="colleges">
     <div class="container">
       <div class="section-head">
         <div>
           <h2>Top colleges and institutions</h2>
-          <p>Start with a clean shortlist. Search by name, stream, country, or exam. Each card is designed to be practical for decision-making, not overwhelming like a giant encyclopedia.</p>
+          <p>Start with a shortlist. Search by name, stream, country, or exam. The cards are designed to be practical for decision-making.</p>
         </div>
-      </div><div class="search-wrap glass">
-    <input id="searchInput" placeholder="Search IIT, AIIMS, NLSIU, BITS, Harvard, medicine, JEE, NEET..." />
-    <select id="countryFilter">
-      <option value="all">All countries</option>
-      <option value="India">India</option>
-      <option value="USA">USA</option>
-      <option value="UK">UK</option>
-    </select>
-    <select id="streamFilter">
-      <option value="all">All streams</option>
-      <option value="Engineering">Engineering</option>
-      <option value="Medicine">Medicine</option>
-      <option value="Law">Law</option>
-      <option value="Management">Management</option>
-    </select>
-    <select id="sortFilter">
-      <option value="priority">Default priority</option>
-      <option value="difficultyHigh">Highest difficulty first</option>
-      <option value="reviewHigh">Best reviewed first</option>
-    </select>
-  </div>
+      </div>
+      <div class="cards" id="collegeCards"></div>
+    </div>
+  </section>
 
-  <div class="cards" id="collegeCards"></div>
-</div>
-
-  </section>  <section class="section" id="exams">
+  <section class="section" id="exams">
     <div class="container grid-2">
       <div class="panel glass">
         <div class="section-head" style="margin-bottom:10px;">
           <div>
             <h2>Entrance exam guide</h2>
-            <p>Explain exams in clean language, then connect them directly to colleges and outcomes.</p>
+            <p>Quick exam summaries linked to real outcomes.</p>
           </div>
         </div>
         <div id="examList"></div>
-      </div><div class="panel glass" id="assistant">
-    <div class="section-head" style="margin-bottom:10px;">
-      <div>
-        <h2>AI doubt solver</h2>
-        <p>This starter version includes a lightweight on-page guide. Later, a real AI API can be connected for live doubt solving, comparison, and career suggestions.</p>
+      </div>
+
+      <div class="panel glass" id="assistant">
+        <div class="section-head" style="margin-bottom:10px;">
+          <div>
+            <h2>AI doubt solver</h2>
+            <p>This starter version answers common questions from the built-in data.</p>
+          </div>
+        </div>
+        <div class="assistant-box">
+          <input id="assistantInput" placeholder="Ask: How do I enter AIIMS Delhi? or Which is harder, JEE Advanced or NEET?" />
+          <button class="button primary" id="askButton">Ask</button>
+        </div>
+        <div class="assistant-answer" id="assistantAnswer">
+          Type a question and press Ask.
+        </div>
       </div>
     </div>
-    <div class="assistant-box">
-      <input id="assistantInput" placeholder="Ask: Which is harder, JEE Advanced or NEET? or How can I enter AIIMS Delhi?" />
-      <button class="button primary" id="askButton">Ask</button>
-    </div>
-    <div class="assistant-answer" id="assistantAnswer">Type a question and press Ask. This demo guide can answer common questions from the built-in data.</div>
-  </div>
-</div>
+  </section>
 
-  </section>  <section class="section" id="reviews">
+  <section class="section" id="reviews">
     <div class="container grid-2">
       <div class="panel glass">
         <div class="section-head" style="margin-bottom:10px;">
           <div>
             <h2>Student preference and outcomes</h2>
-            <p>Add curated insight on why students prefer a college, which skills they usually build there, and what kind of learner fits best.</p>
+            <p>Things students actually care about while choosing a college.</p>
           </div>
         </div>
+
         <div class="review-item">
           <h3>What students usually care about</h3>
-          <div class="muted">Brand value, placements, peer group, faculty quality, campus life, alumni network, location, affordability, and international exposure.</div>
+          <div class="muted">Brand value, placements, peer group, faculty, campus life, alumni network, affordability, and long-term career options.</div>
         </div>
+
         <div class="review-item">
           <h3>What your platform should highlight</h3>
-          <div class="muted">Difficulty to enter, realistic path to enter, backup options, daily student life, academic pressure, and long-term career options after graduation.</div>
+          <div class="muted">Difficulty to enter, realistic path to enter, backup options, skills gained, and what type of learner fits best.</div>
         </div>
+
         <div class="review-item">
           <h3>How to make it trustworthy</h3>
-          <div class="muted">Always show the source year for rankings, fees, and cutoffs. Use short summaries, not giant blocks of copied text. Add a visible “last updated” line on each college page.</div>
+          <div class="muted">Show update year for rankings, fees and cutoffs. Keep summaries short and useful instead of copying huge text blocks.</div>
         </div>
-      </div><div class="panel glass">
-    <div class="section-head" style="margin-bottom:10px;">
-      <div>
-        <h2>How to earn from it later</h2>
-        <p>Start free, then monetize once traffic grows.</p>
+      </div>
+
+      <div class="panel glass">
+        <div class="section-head" style="margin-bottom:10px;">
+          <div>
+            <h2>How to earn from it later</h2>
+            <p>Monetize after traffic grows.</p>
+          </div>
+        </div>
+
+        <div class="review-item">
+          <h3>Phase 1</h3>
+          <div class="muted">Build traffic with college pages, exam pages and clean search experience.</div>
+        </div>
+
+        <div class="review-item">
+          <h3>Phase 2</h3>
+          <div class="muted">Add ads, affiliate links for books/courses, and downloadable comparison PDFs.</div>
+        </div>
+
+        <div class="review-item">
+          <h3>Phase 3</h3>
+          <div class="muted">Add real AI counselling, personalized roadmaps and detailed filters.</div>
+        </div>
       </div>
     </div>
-    <div class="review-item">
-      <h3>Phase 1</h3>
-      <div class="muted">Publish clean college and exam pages, rank on Google, and build trust.</div>
-    </div>
-    <div class="review-item">
-      <h3>Phase 2</h3>
-      <div class="muted">Add display ads, affiliate links for books/courses, premium comparison tools, and downloadable guidance PDFs.</div>
-    </div>
-    <div class="review-item">
-      <h3>Phase 3</h3>
-      <div class="muted">Add AI counselling, personalized roadmaps, filtered college finder, and sponsored placement by transparent partners only.</div>
-    </div>
-  </div>
-</div>
+  </section>
 
-  </section>  <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-card glass">
         <div>
-          <h3 style="margin:0 0 8px;">CareerCompass India</h3>
+          <h3 style="margin:0 0 8px;">CareerTrekker</h3>
           <div class="tiny">
-            Free student guidance site starter. Replace demo data with your real data, publish on free hosting, then submit it to Google Search Console for indexing.
+            A simple student guidance website starter. You can keep expanding the data and pages over time.
           </div>
         </div>
         <a class="button secondary" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to top</a>
       </div>
     </div>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const colleges = [
       {
         name: 'IIT Madras',
         country: 'India',
         stream: 'Engineering',
         image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80',
-        tags: ['Top choice', 'JEE Advanced', 'NIRF-type leader'],
-        location: 'Chennai, India',
-        intro: 'Elite engineering and research institution known for strong academics, innovation culture, and high peer quality.',
-        eligibility: '12th with Physics, Chemistry, Mathematics; qualify JEE Main then JEE Advanced; JoSAA counselling.',
-        cutoff: 'Very high. Top branches often need top all-India ranks.',
+        tags: ['IIT', 'JEE Advanced', 'Top choice'],
+        location: 'Chennai, Tamil Nadu',
+        intro: 'Elite engineering institute known for strong academics, research and innovation culture.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced; counselling.',
+        cutoff: 'Very high.',
         difficulty: 10,
         review: 4.9,
-        skills: 'Analytical thinking, engineering depth, research exposure, startup culture.',
-        path: 'JEE Main → JEE Advanced → JoSAA seat allotment.'
+        skills: 'Engineering depth, research, startup culture.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Delhi',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Engineering', 'Prestige'],
+        location: 'New Delhi, India',
+        intro: 'Premier IIT with excellent academics, industry exposure and strong placements.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'Very high.',
+        difficulty: 10,
+        review: 4.9,
+        skills: 'Tech, leadership, innovation, research.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Bombay',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Top tier', 'Tech'],
+        location: 'Mumbai, Maharashtra',
+        intro: 'Highly preferred IIT with strong coding culture, brand value and entrepreneurship.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'Very high.',
+        difficulty: 10,
+        review: 4.9,
+        skills: 'Coding, analytics, innovation.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Kanpur',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Research', 'Rigorous'],
+        location: 'Kanpur, Uttar Pradesh',
+        intro: 'Known for strong science and engineering foundations with rigorous academics.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'Very high.',
+        difficulty: 10,
+        review: 4.8,
+        skills: 'Analytical thinking, research, core engineering.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Kharagpur',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Historic', 'Large campus'],
+        location: 'Kharagpur, West Bengal',
+        intro: 'Historic IIT with broad departments and strong alumni presence.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'Very high.',
+        difficulty: 10,
+        review: 4.8,
+        skills: 'Technical breadth, leadership, research.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Roorkee',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Core branches', 'Strong'],
+        location: 'Roorkee, Uttarakhand',
+        intro: 'Strong engineering institute with good reputation in core and tech branches.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High to very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Engineering fundamentals, design, research.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Guwahati',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Growing', 'Tech culture'],
+        location: 'Guwahati, Assam',
+        intro: 'Major IIT with strong academics, good campus life and strong student tech culture.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High to very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Engineering, coding, innovation.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Hyderabad',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Modern', 'Innovation'],
+        location: 'Hyderabad, Telangana',
+        intro: 'Modern IIT with strong focus on interdisciplinary work and innovation.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High to very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Emerging tech, innovation, research.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT BHU',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'BHU', 'Engineering'],
+        location: 'Varanasi, Uttar Pradesh',
+        intro: 'Strong engineering institute with legacy, good peer group and known branches.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High to very high.',
+        difficulty: 9,
+        review: 4.7,
+        skills: 'Engineering, coding, peer learning.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Dhanbad',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'ISM', 'Engineering'],
+        location: 'Dhanbad, Jharkhand',
+        intro: 'Well-known institute with strengths in mining, earth sciences and engineering.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High.',
+        difficulty: 9,
+        review: 4.7,
+        skills: 'Engineering, analytics, specialization.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Indore',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Research', 'Growing'],
+        location: 'Indore, Madhya Pradesh',
+        intro: 'Smaller IIT with growing research strength and strong academics.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High.',
+        difficulty: 9,
+        review: 4.7,
+        skills: 'Research, science, engineering basics.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Ropar',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Newer IIT', 'Growing'],
+        location: 'Rupnagar, Punjab',
+        intro: 'Fast-growing IIT with steadily improving academic and research presence.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.6,
+        skills: 'Engineering, projects, innovation.',
+        path: 'JEE Main → JEE Advanced → counselling'
+      },
+      {
+        name: 'IIT Mandi',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80',
+        tags: ['IIT', 'Himachal', 'Engineering'],
+        location: 'Mandi, Himachal Pradesh',
+        intro: 'Growing IIT with a good campus environment and emerging research culture.',
+        eligibility: '12th with PCM; JEE Main; JEE Advanced.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.6,
+        skills: 'Core engineering, projects, innovation.',
+        path: 'JEE Main → JEE Advanced → counselling'
       },
       {
         name: 'AIIMS Delhi',
         country: 'India',
         stream: 'Medicine',
         image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
-        tags: ['Medical', 'NEET UG', 'Highly competitive'],
+        tags: ['AIIMS', 'Medicine', 'NEET UG'],
         location: 'New Delhi, India',
-        intro: 'Premier medical institution with intense competition, high clinical exposure, and strong academic prestige.',
-        eligibility: '10+2 with PCB and required category-wise marks; NEET UG qualification; counselling route.',
-        cutoff: 'Extremely high. Among the toughest medical entries in India.',
+        intro: 'Premier medical institution with intense competition, strong clinical exposure and major prestige.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Extremely high.',
         difficulty: 10,
         review: 4.9,
-        skills: 'Clinical reasoning, academic medicine, discipline, top-tier medical training.',
-        path: 'NEET UG → counselling → AIIMS Delhi if rank is extremely high.'
+        skills: 'Clinical reasoning, academics, discipline.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Rishikesh',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Top medical'],
+        location: 'Rishikesh, Uttarakhand',
+        intro: 'One of the stronger newer AIIMS with good academics and patient exposure.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Clinical skills, academics, patient care.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Bhubaneswar',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Government'],
+        location: 'Bhubaneswar, Odisha',
+        intro: 'Strong AIIMS campus with good medical training and tertiary care exposure.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Clinical medicine, academics, hospital work.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Jodhpur',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Rajasthan'],
+        location: 'Jodhpur, Rajasthan',
+        intro: 'Well-regarded AIIMS with growing academic and clinical strength.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.7,
+        skills: 'Clinical skills, discipline, medicine.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Bhopal',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Top govt'],
+        location: 'Bhopal, Madhya Pradesh',
+        intro: 'Established AIIMS with solid academics and hospital exposure.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.7,
+        skills: 'Patient care, academics, clinical medicine.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Patna',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Bihar'],
+        location: 'Patna, Bihar',
+        intro: 'Important government medical institute with growing patient load and academics.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'High to very high.',
+        difficulty: 8,
+        review: 4.5,
+        skills: 'Clinical work, patient handling, academics.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Raipur',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Chhattisgarh'],
+        location: 'Raipur, Chhattisgarh',
+        intro: 'Growing AIIMS with government medical training and clinical exposure.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.5,
+        skills: 'Clinical medicine, academics, public health exposure.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Nagpur',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'Maharashtra'],
+        location: 'Nagpur, Maharashtra',
+        intro: 'Newer AIIMS with active MBBS and hospital training.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.4,
+        skills: 'Medical training, patient care.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'AIIMS Kalyani',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1587351021759-3e566b3db4f1?auto=format&fit=crop&w=1200&q=80',
+        tags: ['AIIMS', 'Medicine', 'West Bengal'],
+        location: 'Kalyani, West Bengal',
+        intro: 'Newer AIIMS with growing infrastructure and MBBS training.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.4,
+        skills: 'Clinical basics, academics, hospital exposure.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'JIPMER Puducherry',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=1200&q=80',
+        tags: ['Medical', 'Government', 'Top'],
+        location: 'Puducherry, India',
+        intro: 'Top government medical institute with strong academics and clinical work.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Clinical medicine, academics, practical exposure.',
+        path: 'NEET UG → counselling'
+      },
+      {
+        name: 'CMC Vellore',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
+        tags: ['Medical', 'Private', 'Top'],
+        location: 'Vellore, Tamil Nadu',
+        intro: 'Highly respected medical college known for hospital quality and academic standards.',
+        eligibility: '10+2 with PCB; NEET UG; admission process.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Clinical excellence, ethics, medicine.',
+        path: 'NEET UG → admission process'
+      },
+      {
+        name: 'IMS BHU',
+        country: 'India',
+        stream: 'Medicine',
+        image: 'https://images.unsplash.com/photo-1542736667-069246bdbc74?auto=format&fit=crop&w=1200&q=80',
+        tags: ['Medical', 'Government', 'BHU'],
+        location: 'Varanasi, Uttar Pradesh',
+        intro: 'Legacy medical institute with strong government-sector reputation.',
+        eligibility: '10+2 with PCB; NEET UG; counselling.',
+        cutoff: 'High to very high.',
+        difficulty: 8,
+        review: 4.6,
+        skills: 'Clinical medicine, patient handling, academics.',
+        path: 'NEET UG → counselling'
       },
       {
         name: 'NLSIU Bengaluru',
         country: 'India',
         stream: 'Law',
         image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80',
-        tags: ['Law', 'CLAT', 'National law school'],
-        location: 'Bengaluru, India',
-        intro: 'One of India\'s most preferred law schools, valued for academic rigour, moots, policy exposure, and placements.',
-        eligibility: '10+2; appear in CLAT UG with qualifying marks; centralized admission process.',
-        cutoff: 'Very high. Top CLAT ranks usually needed.',
+        tags: ['Law', 'CLAT', 'Top law'],
+        location: 'Bengaluru, Karnataka',
+        intro: 'One of India’s most preferred law schools for legal studies and placements.',
+        eligibility: '10+2; CLAT UG.',
+        cutoff: 'Very high.',
         difficulty: 9,
         review: 4.8,
-        skills: 'Legal analysis, communication, research, policy and litigation foundations.',
-        path: 'CLAT UG → centralized counselling → NLSIU allotment.'
+        skills: 'Legal reasoning, communication, research.',
+        path: 'CLAT UG → counselling'
+      },
+      {
+        name: 'NLU Delhi',
+        country: 'India',
+        stream: 'Law',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
+        tags: ['Law', 'AILET', 'National law'],
+        location: 'New Delhi, India',
+        intro: 'Premier national law university with separate AILET-based entry.',
+        eligibility: '10+2; AILET.',
+        cutoff: 'Very high.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Advocacy, legal analysis, writing.',
+        path: 'AILET → admission'
       },
       {
         name: 'IIM Ahmedabad',
         country: 'India',
         stream: 'Management',
         image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
-        tags: ['MBA', 'CAT', 'Management'],
-        location: 'Ahmedabad, India',
-        intro: 'Flagship management institute famous for case-based learning, intense peer group and top business placements.',
-        eligibility: 'Bachelor\'s degree; CAT score; shortlist; WAT/PI and profile factors.',
-        cutoff: 'Very high CAT percentile with strong profile usually needed.',
+        tags: ['MBA', 'CAT', 'Top IIM'],
+        location: 'Ahmedabad, Gujarat',
+        intro: 'Flagship management institute known for elite peer group and strong placements.',
+        eligibility: 'Bachelor’s degree; CAT; interview process.',
+        cutoff: 'Very high CAT percentile.',
         difficulty: 9,
         review: 4.8,
-        skills: 'Leadership, business thinking, communication, structured problem solving.',
-        path: 'Graduate → CAT → shortlist → WAT/PI → final selection.'
+        skills: 'Leadership, business thinking, communication.',
+        path: 'Graduate → CAT → shortlist → interview'
+      },
+      {
+        name: 'IIM Bangalore',
+        country: 'India',
+        stream: 'Management',
+        image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
+        tags: ['MBA', 'CAT', 'Management'],
+        location: 'Bengaluru, Karnataka',
+        intro: 'Top business school with strong industry links and strong placements.',
+        eligibility: 'Bachelor’s degree; CAT; interview process.',
+        cutoff: 'Very high CAT percentile.',
+        difficulty: 9,
+        review: 4.8,
+        skills: 'Strategy, analytics, leadership.',
+        path: 'Graduate → CAT → shortlist → interview'
+      },
+      {
+        name: 'BITS Pilani',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
+        tags: ['BITSAT', 'Private', 'Top engineering'],
+        location: 'Pilani, Rajasthan',
+        intro: 'Highly respected private engineering institution with strong academics and placements.',
+        eligibility: '12th with PCM; BITSAT.',
+        cutoff: 'High.',
+        difficulty: 8,
+        review: 4.7,
+        skills: 'Engineering, coding, entrepreneurship.',
+        path: 'BITSAT → admission'
+      },
+      {
+        name: 'VIT Vellore',
+        country: 'India',
+        stream: 'Engineering',
+        image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80',
+        tags: ['VITEEE', 'Private', 'Engineering'],
+        location: 'Vellore, Tamil Nadu',
+        intro: 'Popular private engineering university with wide branch options and strong placement focus.',
+        eligibility: '12th with PCM; VITEEE or equivalent route.',
+        cutoff: 'Competitive.',
+        difficulty: 7,
+        review: 4.4,
+        skills: 'Projects, placements preparation, engineering.',
+        path: 'VITEEE → admission'
       },
       {
         name: 'Harvard University',
@@ -457,13 +1101,13 @@ h1 {
         image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80',
         tags: ['Global', 'Holistic admission', 'Prestige'],
         location: 'Massachusetts, USA',
-        intro: 'Globally known university with highly selective admissions, broad opportunities, and strong research reputation.',
-        eligibility: 'Program-specific; usually academic excellence, essays, recommendations, tests where required.',
-        cutoff: 'No simple cutoff; holistic and extremely selective.',
+        intro: 'Globally known university with highly selective admissions and broad opportunities.',
+        eligibility: 'Program-specific academic and profile requirements.',
+        cutoff: 'No simple cutoff.',
         difficulty: 10,
         review: 4.9,
-        skills: 'Research, leadership, networking, interdisciplinary growth.',
-        path: 'Application, essays, profile, recommendations, possible tests/interviews.'
+        skills: 'Leadership, research, networking.',
+        path: 'Application → profile review → possible tests/interviews'
       },
       {
         name: 'University of Oxford',
@@ -472,54 +1116,123 @@ h1 {
         image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
         tags: ['Global', 'Interview-based', 'Historic'],
         location: 'Oxford, UK',
-        intro: 'Highly selective university with deep academic tradition, tutorial style learning, and strong global recognition.',
-        eligibility: 'Program-specific grades; admission tests for some courses; written work and interviews may apply.',
-        cutoff: 'No simple cutoff; very high academic standards.',
+        intro: 'Highly selective university known for academic depth and global recognition.',
+        eligibility: 'Program-specific grades, tests and interview requirements.',
+        cutoff: 'No simple cutoff.',
         difficulty: 10,
         review: 4.8,
-        skills: 'Academic depth, writing, reasoning, discipline, global exposure.',
-        path: 'Course selection → standardized requirements → application → possible tests/interview.'
+        skills: 'Reasoning, writing, academic depth.',
+        path: 'Application → tests/interview → admission'
       }
     ];
 
     const exams = [
       {
-        name: 'JEE Main + JEE Advanced',
-        forWhom: 'Top engineering institutes including IITs',
-        details: 'Two-step route for top engineering entry in India. JEE Main filters and qualifies candidates for JEE Advanced. High conceptual PCM preparation required.',
+        name: 'JEE Main',
+        forWhom: 'NITs, IIITs, many engineering colleges and JEE Advanced eligibility',
+        details: 'National engineering entrance exam testing PCM concepts, speed and accuracy.',
+        difficulty: 'High',
+        route: 'JEE Main → NIT/IIIT admission or JEE Advanced eligibility'
+      },
+      {
+        name: 'JEE Advanced',
+        forWhom: 'IIT admissions',
+        details: 'Second-stage exam for IIT entry. More conceptually demanding than JEE Main.',
         difficulty: 'Very high',
-        route: 'JEE Main → JEE Advanced → JoSAA counselling'
+        route: 'JEE Main qualification → JEE Advanced → counselling'
       },
       {
         name: 'NEET UG',
-        forWhom: 'MBBS, BDS and many medical admissions in India',
-        details: 'Single major undergraduate medical entrance exam in India. Requires strong PCB consistency, speed, accuracy and long-term discipline.',
+        forWhom: 'MBBS, BDS and allied medical admissions',
+        details: 'Main medical entrance exam with huge competition, strong PCB retention and speed pressure.',
         difficulty: 'Very high',
-        route: 'NEET UG → state/all India counselling'
+        route: 'NEET UG → counselling'
+      },
+      {
+        name: 'NEET PG',
+        forWhom: 'MD, MS and postgraduate medical admission',
+        details: 'Large-syllabus postgraduate medical entrance exam based on MBBS subjects.',
+        difficulty: 'Very high',
+        route: 'MBBS → internship/eligibility → NEET PG → counselling'
+      },
+      {
+        name: 'INI-CET',
+        forWhom: 'Select postgraduate medical institutes',
+        details: 'Important PG medical exam for certain top national institutes.',
+        difficulty: 'Very high',
+        route: 'MBBS → eligibility → INI-CET'
       },
       {
         name: 'CLAT UG',
         forWhom: 'National law universities and law aspirants',
-        details: 'Focuses on legal aptitude style reasoning, reading-heavy comprehension, logic, current affairs and time control.',
+        details: 'Law entrance focused on reading-heavy comprehension, reasoning and current affairs.',
         difficulty: 'High',
-<script src="data.js"></script>
-<script>
+        route: 'CLAT → counselling'
+      },
+      {
+        name: 'AILET',
+        forWhom: 'NLU Delhi',
+        details: 'Separate entrance exam for National Law University Delhi.',
+        difficulty: 'High',
+        route: 'AILET → admission'
+      },
+      {
+        name: 'CAT',
+        forWhom: 'IIMs and other MBA institutes',
+        details: 'MBA entrance focused on aptitude, LRDI, VARC and percentile strategy.',
+        difficulty: 'High',
+        route: 'CAT → shortlist → interview/WAT'
+      },
+      {
+        name: 'BITSAT',
+        forWhom: 'BITS campuses',
+        details: 'Computer-based engineering entrance exam for BITS institutions.',
+        difficulty: 'High',
+        route: 'BITSAT → admission'
+      },
+      {
+        name: 'VITEEE',
+        forWhom: 'VIT admissions',
+        details: 'Private university engineering entrance exam for VIT campuses.',
+        difficulty: 'Moderate to high',
+        route: 'VITEEE → admission'
+      },
+      {
+        name: 'CUET UG',
+        forWhom: 'Central universities and many undergraduate programs',
+        details: 'Common entrance test used for many university programs.',
+        difficulty: 'Moderate to high',
+        route: 'CUET UG → university admission'
+      },
+      {
+        name: 'NDA',
+        forWhom: 'Defence aspirants after 12th',
+        details: 'Exam for entry into the National Defence Academy after school.',
+        difficulty: 'High',
+        route: 'NDA written exam → SSB → medicals'
+      }
+    ];
+
     const faqAnswers = [
       {
         match: ['aiims', 'enter aiims', 'how can i enter aiims'],
-        answer: 'To enter AIIMS for MBBS, the usual path is 10+2 with PCB, then NEET UG, followed by centralized counselling. Top AIIMS campuses need extremely high ranks.'
+        answer: 'To enter AIIMS for MBBS, the usual path is 10+2 with PCB, then NEET UG, followed by counselling. Top AIIMS campuses need extremely high ranks.'
       },
       {
         match: ['jee', 'iit', 'jee advanced'],
-        answer: 'For IITs, students generally take JEE Main first and then JEE Advanced. The highest-demand branches usually need very strong all-India ranks.'
+        answer: 'For IITs, students usually take JEE Main first and then JEE Advanced. The highest-demand branches need very strong ranks.'
       },
       {
         match: ['neet', 'harder', 'jee advanced or neet'],
-        answer: 'Both are very competitive, but in different ways. JEE Advanced is usually more conceptually tricky in PCM. NEET has huge competition volume, intense speed pressure, and large syllabus retention.'
+        answer: 'Both are very competitive, but in different ways. JEE Advanced is usually more conceptually tricky in PCM, while NEET has huge competition volume and intense speed pressure.'
       },
       {
         match: ['law', 'clat'],
-        answer: 'For top national law universities, CLAT is the main route. Strong reading speed, reasoning, current affairs and time management matter a lot.'
+        answer: 'For top national law universities, CLAT is the main route. Reading speed, reasoning and current affairs matter a lot.'
+      },
+      {
+        match: ['cat', 'mba', 'iim'],
+        answer: 'For top IIMs, the usual route is graduation, CAT, shortlist, and then interview or related selection stages.'
       }
     ];
 
@@ -540,15 +1253,26 @@ h1 {
       const sort = sortFilter.value;
 
       let filtered = colleges.filter((item) => {
-        const text = [item.name, item.country, item.stream, item.location, item.intro, item.eligibility, item.path, item.tags.join(' ')].join(' ').toLowerCase();
+        const text = [
+          item.name,
+          item.country,
+          item.stream,
+          item.location,
+          item.intro,
+          item.eligibility,
+          item.path,
+          item.tags.join(' ')
+        ].join(' ').toLowerCase();
+
         const matchSearch = !q || text.includes(q);
         const matchCountry = country === 'all' || item.country === country;
         const matchStream = stream === 'all' || item.stream === stream;
+
         return matchSearch && matchCountry && matchStream;
       });
 
-      if (sort === 'difficultyHigh') filtered.sort((a,b) => b.difficulty - a.difficulty);
-      else if (sort === 'reviewHigh') filtered.sort((a,b) => b.review - a.review);
+      if (sort === 'difficultyHigh') filtered.sort((a, b) => b.difficulty - a.difficulty);
+      else if (sort === 'reviewHigh') filtered.sort((a, b) => b.review - a.review);
 
       collegeCards.innerHTML = filtered.map((item) => `
         <article class="card">
@@ -571,7 +1295,7 @@ h1 {
             <div class="desc"><strong>Cutoff style:</strong> ${item.cutoff}</div>
             <div class="desc" style="margin-top:10px;"><strong>Skills you build:</strong> ${item.skills}</div>
             <div class="card-footer" style="margin-top:16px;">
-              <button class="button secondary" onclick="alert('Create a separate detail page later for: ${item.name}')">Open details</button>
+              <button class="button secondary" onclick="alert('Detailed page can be added later for: ${item.name}')">Open details</button>
             </div>
           </div>
         </article>
@@ -596,6 +1320,7 @@ h1 {
 
     function askAssistant() {
       const q = assistantInput.value.trim().toLowerCase();
+
       if (!q) {
         assistantAnswer.textContent = 'Please type a question first.';
         return;
@@ -607,16 +1332,24 @@ h1 {
         return;
       }
 
-      const matchedCollege = colleges.find(item => q.includes(item.name.toLowerCase().split(' ')[0]) || q.includes(item.name.toLowerCase()));
+      const matchedCollege = colleges.find(item =>
+        q.includes(item.name.toLowerCase()) ||
+        q.includes(item.name.toLowerCase().split(' ')[0])
+      );
+
       if (matchedCollege) {
-        assistantAnswer.textContent = `${matchedCollege.name}: ${matchedCollege.intro} Entry route: ${matchedCollege.path} Eligibility: ${matchedCollege.eligibility} Cutoff style: ${matchedCollege.cutoff}`;
+        assistantAnswer.textContent = `${matchedCollege.name}: ${matchedCollege.intro} Entry route: ${matchedCollege.path}. Eligibility: ${matchedCollege.eligibility}. Cutoff style: ${matchedCollege.cutoff}`;
         return;
       }
 
-      assistantAnswer.textContent = 'This starter assistant only answers from built-in data. For real-time AI, connect an API later and feed it updated college, exam, and cutoff data.';
+      assistantAnswer.textContent = 'This starter assistant only answers from built-in data. Later you can connect a real AI API for live updated answers.';
     }
 
-    [searchInput, countryFilter, streamFilter, sortFilter].forEach(el => el.addEventListener('input', renderColleges));
+    [searchInput, countryFilter, streamFilter, sortFilter].forEach(el => {
+      el.addEventListener('input', renderColleges);
+      el.addEventListener('change', renderColleges);
+    });
+
     askButton.addEventListener('click', askAssistant);
     assistantInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') askAssistant();
@@ -624,5 +1357,6 @@ h1 {
 
     renderColleges();
     renderExams();
-  </script></body>
+  </script>
+</body>
 </html>
