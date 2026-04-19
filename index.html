@@ -1369,20 +1369,15 @@ async function askAssistant() {
     const data = await response.json();
 
     if (!response.ok) {
-      assistantAnswer.textContent = data.error || 'Something went wrong.';
+      assistantAnswer.textContent = `Error: ${data.error || 'Something went wrong.'}`;
       return;
     }
 
     assistantAnswer.textContent = data.answer || 'No answer returned.';
   } catch (error) {
-    assistantAnswer.textContent = 'Could not connect to AI.';
+    assistantAnswer.textContent = `Network error: ${error.message}`;
   }
 }
-
-[searchInput, countryFilter, streamFilter, sortFilter].forEach(el => {
-  el.addEventListener('input', renderColleges);
-  el.addEventListener('change', renderColleges);
-});
 
 askButton.addEventListener('click', askAssistant);
 
